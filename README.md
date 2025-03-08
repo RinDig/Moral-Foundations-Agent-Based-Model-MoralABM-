@@ -2,6 +2,8 @@
 
 ## Overview
 
+###This is a Modular restrcuture of Nicolas Navarre's ABM: https://github.com/navarrenicolas/MoralABM
+
 This agent-based model (ABM) simulates the dynamics of moral beliefs in a population of agents with different moral foundations. The model is based on Moral Foundations Theory, which posits that people's moral intuitions are built upon several innate foundations: care, fairness, loyalty (ingroup), authority, and purity. The model explores how agents with different moral profiles interact, signal their values, and update their beliefs about each other over time.
 ![image](https://github.com/user-attachments/assets/079f3c37-982b-4577-86f8-fee7324b3a01)
 
