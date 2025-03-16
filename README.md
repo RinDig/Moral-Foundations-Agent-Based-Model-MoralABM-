@@ -7,7 +7,9 @@
 This agent-based model (ABM) simulates the dynamics of moral beliefs in a population of agents with different moral foundations. The model is based on Moral Foundations Theory, which posits that people's moral intuitions are built upon several innate foundations: care, fairness, loyalty (ingroup), authority, and purity. The model explores how agents with different moral profiles interact, signal their values, and update their beliefs about each other over time.
 ![image](https://github.com/user-attachments/assets/079f3c37-982b-4577-86f8-fee7324b3a01)
 
-## Mathematical Framework
+## Mathematical Framework 
+
+[//]: # We should include a section on the graph representation of the model too, the paper will be helpful.
 
 ### 1. Moral Representation
 
@@ -16,9 +18,15 @@ Each agent's moral values are represented using either:
 - **Dirichlet Distribution**: A multinomial probability distribution with concentration parameters α₁, α₂, ..., α₅ for each moral foundation.
 - **Beta Distribution**: Each moral foundation has its own beta distribution with shape parameters α and β.
 
-The probability distributions represent both:
-- The agent's own moral values
+[//]: # (It might be worth noting that for both the beta and dirichlet initial parameters of agents' own values are estimated with a large empirical dataset.)
+
+The probability distributions represent both: 
+ 
+- The agent's own moral values               
 - The agent's beliefs about other agents' moral values
+
+[//]: # (This distinction and role of the distribution of other agents' moral values vs. an agent's own could be a little clearer)
+[//]: # (the paper should be helpful with how to think about and phrase this.)
 
 ### 2. Signal Generation
 
@@ -44,6 +52,8 @@ For an agent i at step t:
 ### 3. Belief Updating
 
 #### 3.1 Direct Bayesian Updating
+
+[//]: # "direct" here is unnecessary, I would say.
 
 When agent i observes a signal from agent a:
 
@@ -136,6 +146,8 @@ For **Beta distributions**, the KL divergence is calculated for each moral found
 1. **Initialization**:
    - Agents are initialized with moral foundation parameters (conservative or liberal)
    - Initially, agents have accurate beliefs about themselves and apply those to others
+   
+[//]: # (I am pretty sure there is two initialization strategies; apply your own beliefs to others or initiate their distributions randomly)
 
 2. **Simulation Loop**:
    - For each time step:
@@ -150,6 +162,18 @@ For **Beta distributions**, the KL divergence is calculated for each moral found
    - Results show how moral beliefs evolve and potentially polarize over time
 
 ## Interaction Strategies
+
+[//]: # (These are good ideas! But we need to stay focused on the taking the easiest steps first)
+
+[//]: # (that is, re-indexing KL-similarity as such that there is negative and positive influence.)
+
+[//]: # (I don't think the backfire strategy should necessarily be implemented currently as I think (a) it will lead to too strong polarization)
+
+[//]: # (and (b) I don't think it is realistic for your average person to engage in this a lot of the time.)
+
+[//]: # (there is, however, evidence for that when people engage in moral decision making (specifically trade offs) they revise their internal states)
+
+[//]: # (to maintain coherence. Either way I think these effects are too complex for the aim of the model.)
 
 ### Default Strategy
 Agents positively influence each other based on belief similarity:
